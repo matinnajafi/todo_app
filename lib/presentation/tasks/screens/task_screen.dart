@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/core/constants/app_colors.dart';
-import 'package:todo_app/presentation/widgets/category_list.dart';
-import 'package:todo_app/presentation/widgets/category_list_title.dart';
-import 'package:todo_app/presentation/widgets/search_box.dart';
-import 'package:todo_app/presentation/widgets/task_widget.dart';
-import 'package:todo_app/presentation/widgets/user_info.dart';
+import 'package:todo_app/presentation/tasks/widgets/category_list.dart';
+import 'package:todo_app/presentation/tasks/widgets/category_list_title.dart';
+import 'package:todo_app/presentation/tasks/widgets/search_box.dart';
+import 'package:todo_app/presentation/tasks/widgets/task_widget.dart';
+import 'package:todo_app/presentation/tasks/widgets/user_info.dart';
 
 class TaskScreen extends StatefulWidget {
   const TaskScreen({super.key});
