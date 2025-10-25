@@ -17,3 +17,4 @@ const Color pinkColor = Color(0xffDE3163);
 const Color purpleColor = Color(0xff6A669D);
 const Color tealColor = Color(0xff008080);
 const Color yellowColor = Color(0xffE3DF59);
+const Color navigationBottomColor = Color(0xFF65BB94);

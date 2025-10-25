@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_app/presentation/tasks/screens/edit_task_screen.dart';
+import 'package:todo_app/core/routing/go_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,10 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'sh'),
-      home: const EditTaskScreen(),
+      routerConfig: appGlobalRout,
     );
   }
 }
