@@ -2,7 +2,9 @@ enum AppRoute {
   task,
   setting,
   addTask,
-  editTask;
+  editTask,
+  intro,
+  register;
 
   // Extracts the enum name as a string (e.g., 'task')
   String get name => toString().split('.').last;
@@ -13,6 +15,8 @@ enum AppRoute {
     AppRoute.setting: '/setting',
     AppRoute.addTask: '/addtask',
     AppRoute.editTask: '/edittask',
+    AppRoute.intro: '/intro',
+    AppRoute.register: '/register',
   };
 
   // Returns the path for the current route
