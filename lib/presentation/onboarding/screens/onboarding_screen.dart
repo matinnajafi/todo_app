@@ -19,9 +19,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   bool onLastPage = false;
   bool _isPressed = false;
 
-  static const double indicatorAlignmentY = 0.6;
-  static const double buttonAlignmentY = 0.8;
-  static const double skipAlignmentY = 0.9;
+  static const double indicatorAlignmentY = 0.55;
+  static const double buttonAlignmentY = 0.75;
+  static const double skipAlignmentY = 0.85;
   static const int lastPageIndex = 2;
 
   @override

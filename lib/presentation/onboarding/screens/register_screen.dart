@@ -39,11 +39,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: SafeArea(
-        child: Stack(
-          children: [_buildTopSection(size), _buildBottomForm(size)],
-        ),
-      ),
+      body: Stack(children: [_buildTopSection(size), _buildBottomForm(size)]),
     );
   }
 
@@ -119,7 +115,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     controllerFirstName: firstNameController,
                     controllerLastName: lastNameController,
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 44),
                 ],
               ),
             ),
