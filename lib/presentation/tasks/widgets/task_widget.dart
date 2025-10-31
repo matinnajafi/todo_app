@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:todo_app/core/constants/app_colors.dart';
 import 'package:todo_app/core/utils/converters/persian_number_converter.dart';
+import 'package:todo_app/data/models/task.dart';
 
 class TaskWidget extends StatefulWidget {
-  const TaskWidget({super.key});
+  const TaskWidget({super.key, required this.task});
+  final Task task;
 
   @override
   State<TaskWidget> createState() => _TaskWidgetState();
@@ -99,7 +101,7 @@ class _TaskWidgetState extends State<TaskWidget> {
                     child: Directionality(
                       textDirection: TextDirection.rtl,
                       child: Text(
-                        'تایتل تسک',
+                        widget.task.title,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(
@@ -114,7 +116,7 @@ class _TaskWidgetState extends State<TaskWidget> {
               Directionality(
                 textDirection: TextDirection.rtl,
                 child: Text(
-                  'توضیحات تسک',
+                  widget.task.subtitle,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(

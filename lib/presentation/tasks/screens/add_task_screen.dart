@@ -73,7 +73,10 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                 const SizedBox(height: 6),
                 TaskTypeList(selectedItemList: selectedTaskTypeItem),
                 const Spacer(),
-                const AddTaskButton(),
+                AddTaskButton(
+                  taskTitleController: taskTitleController,
+                  taskSubTitleController: taskSubTitleController,
+                ),
                 const Spacer(),
               ],
             ),
