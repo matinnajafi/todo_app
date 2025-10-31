@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:todo_app/core/routing/app_route.dart';
-import 'package:todo_app/data/models/task_type_enum.dart';
-import 'package:todo_app/data/services/task_services.dart';
+import 'package:todo_app/presentation/tasks/bloc/task_bloc.dart';
+import 'package:todo_app/presentation/tasks/bloc/task_event.dart';
 
 class AddTaskButton extends StatelessWidget {
-  AddTaskButton({
+  const AddTaskButton({
     super.key,
     required this.taskTitleController,
     required this.taskSubTitleController,
@@ -14,8 +15,6 @@ class AddTaskButton extends StatelessWidget {
   final TextEditingController taskTitleController;
   final TextEditingController taskSubTitleController;
 
-  final TaskService _taskService = TaskService();
-
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -23,6 +22,7 @@ class AddTaskButton extends StatelessWidget {
         final title = taskTitleController.text.trim();
         final subtitle = taskSubTitleController.text.trim();
 
+        // validate input
         if (title.isEmpty || subtitle.isEmpty) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('عنوان و توضیحات نباید خالی باشند')),
@@ -30,12 +30,14 @@ class AddTaskButton extends StatelessWidget {
           return;
         }
 
-        _taskService.addTask(
-          title: title,
-          subtitle: subtitle,
-          type: TaskTypeEnum.work, // You can make this dynamic later
-        );
+        // add task process
+        context.read<TaskBloc>().add(AddTaskEvent(title, subtitle));
 
+        // Clear the text fields after adding the task
+        taskTitleController.clear();
+        taskSubTitleController.clear();
+
+        // Navigate back to the task list screen
         context.goNamed(AppRoute.task.name);
       },
       style: ElevatedButton.styleFrom(
